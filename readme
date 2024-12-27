@@ -1,5 +1,5 @@
 
-[] CRUD
+CRUD
   // Method, URL, params (route param, query param, request body), http code, validations, error handler, headers
   # type Task = {
   #   id: string,
