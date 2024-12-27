@@ -1,0 +1,47 @@
+
+[] CRUD
+  // Method, URL, params (route param, query param, request body), http code, validations, error handler, headers
+  # type Task = {
+  #   id: string,
+  #   title: string,
+  #   description: string,
+  #   completed_at: string | null,
+  #   created_at: string,
+  #   updated_at: string,
+  # }
+  [x] POST
+    url: /tasks 
+    params: req.body
+    success-code: 201
+    error-codes: [422]
+    validation: req.body not empty + Title and description should be present
+  [x] GET 
+    url: /tasks
+    params: null
+    success-code: 200
+    error-codes: []
+    validation: null
+  [x] PUT 
+    url: /tasks/:id 
+    params: route param + req.body
+    success-code: 204
+    error-codes: [422]
+    validation: req.body not empty + Title and description should be present + :id should exist
+  [x] DELETE
+    url: /tasks/:id
+    params: route param
+    success-code: 204
+    error-codes: [422]
+    validation: :id should exist
+  [x] PATCH 
+    url: /tasks/:id
+    params: route param + req.body
+    success-code: 204
+    error-codes: [422]
+    validation: :id should exist + at least one attribute and it should exist
+  [x] POST
+    url: /tasks/import 
+    params: csv file 
+    success-code: 201
+    error-codes: [422]
+    Headers: multipart/form-data (csv-parse)

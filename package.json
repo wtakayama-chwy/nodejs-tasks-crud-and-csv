@@ -1,0 +1,26 @@
+{
+  "engines": {
+    "node": ">20.6.0"
+  },
+  "name": "task-challenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "node --env-file=.env --watch -r ts-node/register src/server.ts"
+  },
+  "keywords": [],
+  "author": "William Sobreira Takayama",
+  "license": "ISC",
+  "dependencies": {
+    "busboy": "^1.6.0",
+    "csv-parse": "^5.6.0"
+  },
+  "devDependencies": {
+    "@types/busboy": "^1.5.4",
+    "@types/node": "^22.10.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2"
+  }
+}
